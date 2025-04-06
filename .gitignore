@@ -1,0 +1,11 @@
+build/
+build_isolated/
+devel/
+devel_isolated/
+install/
+install_isolated/
+logs/
+*.pyc
+__pycache__/
+*.so
+.DS_Store
