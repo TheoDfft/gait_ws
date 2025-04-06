@@ -1,0 +1,9 @@
+[submodule "src/towr"]
+	path = src/towr
+	url = https://github.com/TheoDfft/towr_gait_research.git
+[submodule "src/ifopt"]
+	path = src/ifopt
+	url = https://github.com/ethz-adrl/ifopt.git
+[submodule "src/xpp"]
+	path = src/xpp
+	url = https://github.com/leggedrobotics/xpp.git
