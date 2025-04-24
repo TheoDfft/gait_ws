@@ -2,16 +2,27 @@
 <launch> 
     <arg name="x" default="0.0" /> 
     <arg name="y" default="0.0" /> 
-    <arg name="z" default="1.0" /> 
-    <arg name="roll" default="0"/> 
-    <arg name="pitch" default="0"/> 
+    <arg name="z" default="0.58" /> 
+    <arg name="roll" default="0.0"/> 
+    <arg name="pitch" default="0.0"/> 
     <arg name="yaw" default="0.0" /> 
-    <arg name="urdf_robot_file" default="$(find my_legged_robots_sims)/urdf/monoped_controlled_copy.urdf" />
+    <arg name="urdf_robot_file" default="$(find my_legged_robots_sims)/urdf/monoped_controlled.urdf" />
     <arg name="robot_name" default="monoped" />
 
     <param name="robot_description" command="cat $(arg urdf_robot_file)" />
+    
+    <!-- Spawn model with initial position and orientation, keep simulation paused -->
     <node name="spawn_monoped" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
-
+    args="-urdf -param robot_description 
+        -model $(arg robot_name)
+        -J haa_joint 0.0
+        -J hfe_joint 0.9818198986954192
+        -J kfe_joint -2.0617062761426066
+        -x $(arg x) 
+        -y $(arg y) 
+        -z $(arg z)
+        -R $(arg roll) 
+        -P $(arg pitch) 
+        -Y $(arg yaw)" />
     
 </launch>

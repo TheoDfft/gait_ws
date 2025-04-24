@@ -11,18 +11,45 @@ monoped:
     publish_rate: 1000
 
   # Effort Controllers ---------------------------------------
+  # haa_joint_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: haa_joint
+  #   pid: {p: 100.0, i: 0.0, d: 0.5}
+  #   #pid: {p: 50.0, i: 0.1, d: 0.0}
+  # hfe_joint_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: hfe_joint
+  #   pid: {p: 100.0, i: 0.0, d: 0.5}
+  #   #pid: {p: 50.0, i: 0.1, d: 0.0}
+    
+  # kfe_joint_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: kfe_joint
+  #   pid: {p: 100.0, i: 0.0, d: 0.5}
+
   haa_joint_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
     joint: haa_joint
-    pid: {p: 10.0, i: 0.0, d: 0.5}
+    pid: {p: 100.0, i: 0.0, d: 0.5}
     #pid: {p: 50.0, i: 0.1, d: 0.0}
+    gains:
+      haa_joint: {p: 100.0, i: 0.0, d: 0.5}
   hfe_joint_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
     joint: hfe_joint
-    pid: {p: 10.0, i: 0.0, d: 0.5}
+    pid: {p: 100.0, i: 0.0, d: 0.5}
     #pid: {p: 50.0, i: 0.1, d: 0.0}
+    gains:
+      hfe_joint: {p: 100.0, i: 0.0, d: 0.5}
     
   kfe_joint_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
     joint: kfe_joint
-    pid: {p: 10.0, i: 0.0, d: 0.5}
+    pid: {p: 100.0, i: 0.0, d: 0.5}
+    gains:
+      kfe_joint: {p: 100.0, i: 0.0, d: 0.5}
+
+  # joint_states:
+  #   haa_joint: -0.0
+  #   hfe_joint: 0.9818198986954192
+  #   kfe_joint: -2.0617062761426066

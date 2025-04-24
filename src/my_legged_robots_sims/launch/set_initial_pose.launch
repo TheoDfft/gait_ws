@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Launch this file after Gazebo and the robot model are already loaded -->
+  
+  <!-- Make the script executable -->
+  <node pkg="my_legged_robots_sims" type="set_initial_pose.py" name="set_monoped_initial_pose" output="screen"/>
+  
+</launch> 
